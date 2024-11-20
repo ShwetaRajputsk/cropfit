@@ -5,6 +5,15 @@ from tensorflow.keras.models import load_model
 from flask_cors import CORS
 import numpy as np
 import json
+# google drive
+import gdown
+
+# Public Google Drive file URL
+file_url = "https://drive.google.com/uc?id=1sI5psriAPuqg_aMv3Fl01ASmt2ZQnyd3"
+output_path = "crop_disease_vgg16_model.h5"  # Change to your desired file name
+
+# Download the file
+gdown.download(file_url, output_path, quiet=False)
 
 # Load your trained model
 model = load_model('crop_disease_vgg16_model.h5')
